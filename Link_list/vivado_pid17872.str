@@ -1,0 +1,1042 @@
+/*
+
+Vivado v2017.2 (64-bit)
+SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+
+Process ID: 17872
+License: Customer
+
+Current time: 	7/12/19 7:37:06 PM CST
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 34 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.2/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.2/tps/win64/jre/bin/java.exe
+Java library paths: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o;C:/WINDOWS/Sun/Java/bin;C:/WINDOWS/system32;C:/WINDOWS;C:/Xilinx/Vivado/2017.2/bin;C:/Xilinx/Vivado/2017.2/lib/win64.o;C:/Xilinx/Vivado/2017.2/tps/win64/jre/bin/server;C:/Xilinx/Vivado/2017.2/tps/win64/jre/bin;C:/Xilinx/Vivado/2017.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2017.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado_HLS/2017.2/bin;C:/CTEX/UserData/miktex/bin;C:/CTEX/MiKTeX/miktex/bin;C:/CTEX/CTeX/ctex/bin;C:/CTEX/CTeX/cct/bin;C:/CTEX/CTeX/ty/bin;C:/CTEX/Ghostscript/gs9.05/bin;C:/CTEX/GSview/gsview;C:/CTEX/WinEdt;C:/Program Files/nodejs/;C:/Program Files/Git/cmd;;C:/WINDOWS/system32;C:/WINDOWS;C:/WINDOWS/System32/Wbem;C:/Windows/SysWOW64;C:/Program Files/Git/libexec/git-core;C:/Program Files/Git/bin;C:/Users/dell/Flutter/flutter/bin;C:/cocos2dx/cocos2d-x-3.17/templates;C:/cocos2dx/cocos2d-x-3.17/tools/cocos2d-console/bin;C:/Users/dell/AppData/Local/Programs/Python/Python37-32/Scripts/;C:/Users/dell/AppData/Local/Programs/Python/Python37-32/;C:/Users/dell/AppData/Local/Microsoft/WindowsApps;C:/Program Files/Bandizip/;C:/Program Files/Microsoft VS Code/bin;C:/Users/dell/AppData/Roaming/npm;C:/Python27/;C:/Python27/Scripts/;C:/Users/dell/AppData/Local/hyper/app-2.1.2/resources/bin;C:/intelFPGA/18.0/modelsim_ase/win32aloem;C:/intelFPGA_lite/18.0/modelsim_ase/win32aloem;C:/Xilinx/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/bin;C:/Xilinx/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/libexec/gcc/x86_64-w64-mingw32/6.2.0;.
+
+User name: 	dell
+User home directory: C:/Users/dell
+User working directory: C:/Users/dell/Desktop/TCS_success2/TCS_success
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.2
+RDI_DATADIR: C:/Xilinx/Vivado/2017.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.2/bin
+
+User preferences location: C:/Users/dell/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/dell/AppData/Roaming/Xilinx/Vivado/2017.2/vivado.xml
+Vivado layouts directory: C:/Users/dell/AppData/Roaming/Xilinx/Vivado/2017.2/layouts
+PlanAhead jar location: 	C:/Xilinx/Vivado/2017.2/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	C:/Users/dell/Desktop/TCS_success2/TCS_success/.Xil/Vivado-17872-DESKTOP-6V8QMJI
+
+GUI allocated memory:	186 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 503 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 55 MB (+55349kb) [00:00:16]
+// [Engine Memory]: 457 MB (+327866kb) [00:00:16]
+// bs:g (cg:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\dell\desktop\TCS_success2\TCS_success\TCS_Success.xpr. Version: Vivado v2017.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// [Engine Memory]: 502 MB (+23360kb) [00:00:18]
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 524 MB. GUI used memory: 36 MB. Current time: 7/12/19 7:37:11 PM CST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
+// [Engine Memory]: 594 MB (+70148kb) [00:00:28]
+// [GUI Memory]: 69 MB (+11815kb) [00:00:30]
+// Tcl Message: open_project C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'F:/vivado_test/TCS_success' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'. 
+// [GUI Memory]: 74 MB (+1811kb) [00:00:33]
+// Project name: TCS_Success; location: C:/Users/dell/desktop/TCS_success2/TCS_success; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 834.234 ; gain = 129.680 
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (MIPS.v) elapsed time: 0.3s
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (MIPS.v)]", 1, true); // B:i (D:JPanel, cg:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (MIPS.v)]", 1, true, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click - Node
+selectCodeEditor("MIPS.v", 168, 240); // bI:J (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 80 MB (+1973kb) [00:01:06]
+// Elapsed time: 16 seconds
+selectCodeEditor("MIPS.v", 387, 326); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 36 seconds
+selectCodeEditor("MIPS.v", 351, 338); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 139, 95); // bI:J (JPanel:JComponent, cg:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bs:g (cg:JFrame):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.RunRun_COMPLETED_IMPLEMENTATION_RUN_EXISTS_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, G:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 
+// bs:g (cg:JFrame):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: [Fri Jul 12 19:38:45 2019] Launched impl_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/runme.log 
+// 'c' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bs:g (cg:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 623 MB. GUI used memory: 44 MB. Current time: 7/12/19 7:38:53 PM CST
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking too long to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking too long to process. Increasing delay to 2000 ms.
+// Elapsed time: 197 seconds
+selectCodeEditor("MIPS.v", 348, 187); // bI:J (JPanel:JComponent, cg:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator]", 1); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bs:g (cg:JFrame):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.RunRun_COMPLETED_IMPLEMENTATION_RUN_EXISTS_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, G:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 
+// bs:g (cg:JFrame):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: [Fri Jul 12 19:42:08 2019] Launched impl_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/runme.log 
+// 'c' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bs:g (cg:JFrame)
+// Elapsed time: 18 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (MIPS.v), dut : mips (MIPS.v)]", 2, true); // B:i (D:JPanel, cg:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (MIPS.v), dut : mips (MIPS.v)]", 2, true, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click - Node
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 15 seconds
+selectCodeEditor("MIPS.v", 132, 138); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 149, 139); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 154, 139); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 279, 138); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 203, 214); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 172, 169); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 23 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 8); // B:i (D:JPanel, cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top (MIPS.v)]", 10, true); // B:i (D:JPanel, cg:JFrame) - Node
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 26 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// ak:q (cg:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, ak:q)
+// bs:g (cg:JFrame):  Save Constraints : addNotify
+// [GUI Memory]: 85 MB (+905kb) [00:07:12]
+// TclEventType: DG_GRAPH_STALE
+// bs:g (cg:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // ak:q (cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_MODIFY
+// [GUI Memory]: 92 MB (+2623kb) [00:07:12]
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// 'cp' command handler elapsed time: 6 seconds
+dismissDialog("Resetting Runs"); // bs:g (cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// bs:g (cg:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Jul 12 19:44:03 2019] Launched synth_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/synth_1/runme.log [Fri Jul 12 19:44:03 2019] Launched impl_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/runme.log 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+dismissDialog("Generate Bitstream"); // bs:g (cg:JFrame)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 13 seconds
+selectCodeEditor("MIPS.v", 205, 134); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 288, 142); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 82 seconds
+selectCodeEditor("MIPS.v", 66, 90); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 167, 199); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 235, 169); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("MIPS.v", 179, 193); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 97 MB (+1087kb) [00:09:57]
+// ah:x (cg:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 44 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a:JRadioButton (JPanel:JComponent, ah:x)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:x)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+dismissDialog("Bitstream Generation Completed"); // ah:x (cg:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h:k (JPanel:JComponent, cg:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // Z:JMenu (ai:JPopupMenu, cg:JFrame)
+selectMenuItem((HResource) null, "localhost:3121,xilinx_tcf/Digilent/210183636879A,PARAM.FREQUENCY:15000000"); // ac:JMenuItem (JPopupMenu:JComponent, cg:JFrame)
+// bs:g (cg:JFrame):  Open Hardware Target : addNotify
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -url localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183636879A] 
+// Tcl Message: ERROR: [Labtoolstcl 44-199] No matching targets found on connected servers: localhost Resolution: If needed connect the desired target to a server and use command refresh_hw_server. Then rerun the get_hw_targets command. 
+// Tcl Message: ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors. 
+// M:a (cg:JFrame): Critical Messages: addNotify
+dismissDialog("Open Hardware Target"); // bs:g (cg:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f:a (JPanel:JComponent, M:a)
+dismissDialog("Critical Messages"); // M:a (cg:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h:k (JPanel:JComponent, cg:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // Z:JMenu (ai:JPopupMenu, cg:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_AVAILABLE_TARGETS_ON_SERVER, "Available Targets on Server"); // Z:JMenu (ai:JPopupMenu, cg:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_TARGET_WIZARD, "Open New Target..."); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_TARGET_WIZARD
+// aM:g (cg:JFrame): Open New Hardware Target: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+// HOptionPane Error: 'A server which has the same host name is already connected. Enter a different valid remote host name or select 'Local Server' before proceeding. (Duplicate Host Name)'
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+selectButton("PAResourceOtoP.OpenTargetWizard_SERVER_WHICH_HAS_SAME_HOST_NAME_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, G:JDialog)
+selectComboBox(PAResourceOtoP.OpenTargetWizard_CONNECT_TO, "Remote server (target is on remote machine)", 1); // e:JComboBox (JPanel:JComponent, aM:g)
+selectButton("CANCEL", "Cancel"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+// 'H' command handler elapsed time: 9 seconds
+dismissDialog("Open New Hardware Target"); // aM:g (cg:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h:k (JPanel:JComponent, cg:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // Z:JMenu (ai:JPopupMenu, cg:JFrame)
+selectMenuItem(PAResourceOtoP.OpenRecentTarget_CLEAR_LIST, "Clear List"); // ac:JMenuItem (JPopupMenu:JComponent, cg:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h:k (JPanel:JComponent, cg:JFrame)
+selectMenu(PAResourceOtoP.ProgramDebugTab_AVAILABLE_TARGETS_ON_SERVER, "Available Targets on Server"); // Z:JMenu (ai:JPopupMenu, cg:JFrame)
+selectMenuItem((HResource) null, "localhost:3121/xilinx_tcf/Digilent/210183636859A"); // ac:JMenuItem (JPopupMenu:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_TARGET
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// bs:g (cg:JFrame):  Open Target : addNotify
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target {localhost:3121/xilinx_tcf/Digilent/210183636859A} 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183636859A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_CFGMEM_CREATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_CFGMEM_PART_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Tcl Message: create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {s25fl032p-spi-x1_x2_x4}] 0] 
+dismissDialog("Open Target"); // bs:g (cg:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// HOptionPane Error: 'The file 'C:/Xilinx/Vivado/2017.2/data/xicom/cfgmem/spi_xc7a35t_pullnone.bit' does not exist. Please specify a valid file name. (Invalid File Name)'
+selectButton("RDIResource.HFileChooserPanel_FILE_DOES_NOT_EXIST_PLEASE_SPECIFY_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, H:JDialog)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, bz:aD)
+// 'I' command handler elapsed time: 5 seconds
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation]", 5); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking too long to process. Increasing delay to 4000 ms.
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton("PAResourceQtoS.RunBitgen_BITSTREAM_GENERATION_HAS_ALREADY_COMPLETED_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, G:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// bs:g (cg:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 -prev_step  
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: RUN_MODIFY
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Jul 12 19:47:40 2019] Launched impl_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bs:g (cg:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, bz:aD)
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+selectCodeEditor("MIPS.v", 599, 381); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 35 seconds
+selectCodeEditor("MIPS.v", 520, 213); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: RUN_COMPLETED
+// ah:x (cg:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ah:x)
+dismissDialog("Bitstream Generation Completed"); // ah:x (cg:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis]", 4); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_TARGET_WIZARD, "Open New Target..."); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_OPEN_TARGET_WIZARD
+// aM:g (cg:JFrame): Open New Hardware Target: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+selectComboBox(PAResourceOtoP.OpenTargetWizard_CONNECT_TO, "Local server (target is on local machine)", 0); // e:JComboBox (JPanel:JComponent, aM:g)
+// HOptionPane Error: 'A server which has the same host name is already connected. Enter a different valid remote host name or select 'Local Server' before proceeding. (Duplicate Host Name)'
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+selectButton("PAResourceOtoP.OpenTargetWizard_SERVER_WHICH_HAS_SAME_HOST_NAME_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, G:JDialog)
+selectButton("CANCEL", "Cancel"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+// 'H' command handler elapsed time: 6 seconds
+dismissDialog("Open New Hardware Target"); // aM:g (cg:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// HOptionPane Error: 'The file 'C:/Xilinx/Vivado/2017.2/data/xicom/cfgmem/spi_xc7a35t_pullnone.bit' does not exist. Please specify a valid file name. (Invalid File Name)'
+selectButton("RDIResource.HFileChooserPanel_FILE_DOES_NOT_EXIST_PLEASE_SPECIFY_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, H:JDialog)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, bz:aD)
+// 'I' command handler elapsed time: 9 seconds
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// HOptionPane Error: 'The file 'C:/Xilinx/Vivado/2017.2/data/xicom/cfgmem/spi_xc7a35t_pullnone.bit' does not exist. Please specify a valid file name. (Invalid File Name)'
+selectButton("RDIResource.HFileChooserPanel_FILE_DOES_NOT_EXIST_PLEASE_SPECIFY_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, H:JDialog)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, bz:aD)
+// 'I' command handler elapsed time: 4 seconds
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+selectCodeEditor("MIPS.v", 523, 197); // bI:J (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 105 MB (+2953kb) [00:12:25]
+selectCodeEditor("MIPS.v", 256, 167); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 443, 276); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator]", 1); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+selectButton("OptionPane.button", "OK"); // JButton:AbstractButton (JPanel:JComponent, G:JDialog)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k:JideButton (JPanel:JComponent, cg:JFrame)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw 
+// bs:g (cg:JFrame):  CLose Hardware Manager : addNotify
+dismissDialog("CLose Hardware Manager"); // bs:g (cg:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bs:g (cg:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// bs:g (cg:JFrame):  Resetting Runs : addNotify
+// bs:g (cg:JFrame):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: [Fri Jul 12 19:49:37 2019] Launched synth_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/synth_1/runme.log [Fri Jul 12 19:49:37 2019] Launched impl_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bs:g (cg:JFrame)
+// Elapsed time: 30 seconds
+selectCodeEditor("MIPS.v", 499, 351); // bI:J (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 111 MB (+502kb) [00:13:21]
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// Elapsed time: 44 seconds
+selectCodeEditor("MIPS.v", 326, 188); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 304, 240); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 23 seconds
+selectCodeEditor("MIPS.v", 356, 180); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 23, 161); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 213, 246); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 53, 256); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 43 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 6); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Fri Jul 12 19:52:09 2019] Launched impl_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/runme.log 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: ERROR: [Common 17-69] Command failed:  Run'impl_1' is already running and cannot be relaunched. 
+// aj:a (cg:JFrame): Launch Run Critical Messages: addNotify
+dismissDialog("Launch Run Critical Messages"); // aj:a (cg:JFrame)
+// TclEventType: RUN_COMPLETED
+// ah:x (cg:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 42 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a:JRadioButton (JPanel:JComponent, ah:x)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:x)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+dismissDialog("Bitstream Generation Completed"); // ah:x (cg:JFrame)
+selectCodeEditor("MIPS.v", 346, 410); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 20 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h:k (JPanel:JComponent, cg:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_TARGET_WIZARD, "Open New Target..."); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_TARGET_WIZARD
+// aM:g (cg:JFrame): Open New Hardware Target: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+// bs:g (aM:g):  Open Server : addNotify
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// bs:g (aM:g):  Open Target : addNotify
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+dismissDialog("Open Server"); // bs:g (aM:g)
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_TARGET_CLOSE
+// bs:g (aM:g):  Close Target : addNotify
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+dismissDialog("Open Target"); // bs:g (aM:g)
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+dismissDialog("Close Target"); // bs:g (aM:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+// TclEventType: HW_OBJECT_DELETE
+// bs:g (aM:g):  Open Hardware Target : addNotify
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_CFGMEM_DELETE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// Tcl Message: connect_hw_server -url localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210183636859A] 
+// TclEventType: HW_TARGET_CHANGE
+// Tcl Message: set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210183636859A] 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183636859A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_CFGMEM_CREATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_CFGMEM_PART_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Tcl Message: create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {s25fl032p-spi-x1_x2_x4}] 0] 
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, aM:g)
+// 'H' command handler elapsed time: 13 seconds
+dismissDialog("Open Hardware Target"); // bs:g (aM:g)
+dismissDialog("Open New Hardware Target"); // aM:g (cg:JFrame)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// HOptionPane Error: 'The file 'C:/Xilinx/Vivado/2017.2/data/xicom/cfgmem/spi_xc7a35t_pullnone.bit' does not exist. Please specify a valid file name. (Invalid File Name)'
+selectButton("RDIResource.HFileChooserPanel_FILE_DOES_NOT_EXIST_PLEASE_SPECIFY_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, H:JDialog)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, bz:aD)
+// 'I' command handler elapsed time: 8 seconds
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+selectCodeEditor("MIPS.v", 736, 241); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 12 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "users"); // l:X (ax:e, cg:JFrame)
+// Elapsed time: 24 seconds
+selectCodeEditor("MIPS.v", 395, 171); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 488, 157); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 275, 186); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 329, 201); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 265, 201); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 304, 186); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 417, 164); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 23 seconds
+selectCodeEditor("MIPS.v", 289, 139); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 164, 172); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 164, 162); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 392, 162); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 464, 213); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// HOptionPane Error: 'The file 'C:/Xilinx/Vivado/2017.2/data/xicom/cfgmem/spi_xc7a35t_pullnone.bit' does not exist. Please specify a valid file name. (Invalid File Name)'
+selectButton("RDIResource.HFileChooserPanel_FILE_DOES_NOT_EXIST_PLEASE_SPECIFY_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, H:JDialog)
+// [GUI Memory]: 117 MB (+190kb) [00:19:01]
+// Elapsed time: 10 seconds
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// HOptionPane Error: 'The file 'C:/Xilinx/Vivado/2017.2/data/xicom/cfgmem/spi_xc7a35t_pullnone.bit' does not exist. Please specify a valid file name. (Invalid File Name)'
+selectButton("RDIResource.HFileChooserPanel_FILE_DOES_NOT_EXIST_PLEASE_SPECIFY_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, H:JDialog)
+// Elapsed time: 125 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, bz:aD)
+// 'I' command handler elapsed time: 155 seconds
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 6); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bs:g (cg:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bs:g (cg:JFrame)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Fri Jul 12 19:58:11 2019] Launched synth_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/synth_1/runme.log [Fri Jul 12 19:58:11 2019] Launched impl_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/runme.log 
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 122 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, (String) null); // q:a (af:JPanel, bz:aD)
+selectButton(RDIResource.HJFileChooserHelpers_JUMP_TO_CURRENT_WORKING_DIRECTORY, (String) null); // a:JButton (JPanel:JComponent, JDialog:Dialog)
+// Elapsed time: 21 seconds
+selectComboBox(RDIResource.HJFileChooserRecentListPreview_RECENT_DIRECTORIES, "C:/Users/dell/desktop/TCS_success2/TCS_success", 3); // ak:e (JPanel:JComponent, JDialog:Dialog)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 30 seconds
+setFileChooser("C:/Users/dell/Desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/top.bit");
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// bs:g (cg:JFrame):  Program Device : addNotify
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/dell/Desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 61 seconds
+dismissDialog("Program Device"); // bs:g (cg:JFrame)
+// ah:x (cg:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 11 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:x)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// bs:g (cg:JFrame):  Open Implemented Design : addNotify
+// Tcl Message: open_run impl_1 
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, bs:g)
+// TclEventType: DESIGN_CLOSE
+// TclEventType: DESIGN_NEW_FAILED
+// Tcl Message: INFO: [Common 17-41] Interrupt caught. Command should exit soon. INFO: [Netlist 29-17] Analyzing 302 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2017.2 INFO: [Project 1-111] Unisim Transformation Summary:   A total of 256 instances were transformed.   RAM256X1S => RAM256X1S (RAMS64E, RAMS64E, RAMS64E, RAMS64E, MUXF7, MUXF7, MUXF8): 256 instances  INFO: [Common 17-344] 'open_run' was cancelled 
+// 'dH' command handler elapsed time: 4 seconds
+dismissDialog("Open Implemented Design"); // bs:g (cg:JFrame)
+// Elapsed time: 27 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// bs:g (cg:JFrame):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/dell/Desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// [GUI Memory]: 128 MB (+5509kb) [00:25:16]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bs:g (cg:JFrame)
+// Elapsed time: 311 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// bs:g (cg:JFrame):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/dell/Desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 7 seconds
+dismissDialog("Program Device"); // bs:g (cg:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 623 MB. GUI used memory: 58 MB. Current time: 7/12/19 8:08:54 PM CST
+// Elapsed time: 225 seconds
+selectCodeEditor("MIPS.v", 356, 329); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 12 seconds
+selectCodeEditor("MIPS.v", 306, 266); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 23 seconds
+selectCodeEditor("MIPS.v", 259, 290); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 275 seconds
+selectCodeEditor("MIPS.v", 389, 265); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 39 seconds
+selectCodeEditor("MIPS.v", 248, 149); // bI:J (JPanel:JComponent, cg:JFrame)
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // I:M (Workspace:JPanel, cg:JFrame)
+selectCodeEditor("MIPS.v", 446, 236); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("MIPS.v", 120, 85); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 87, 394); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 32, 144); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 19, 110); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 246, 528); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 71, 378); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 98, 422); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 129, 459); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 294, 320); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 52, 186); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 401, 520); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 106, 316); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 375, 416); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 618, 409); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 169, 531); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 255, 416); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 208, 429); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 75 seconds
+selectCodeEditor("MIPS.v", 312, 360); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 10, 222); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 78, 300); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 114, 312); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 82, 287); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 67, 134); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 140, 138); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 141, 144); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 205, 138); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 293, 136); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 325, 133); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 376, 134); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 422, 136); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 330, 322); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 141, 177); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 146, 165); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 142, 112); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 202, 146); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 280, 171); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 210, 196); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 183, 218); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 195, 236); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 183, 263); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 82, 136); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 106, 540); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 144, 363); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 74 seconds
+selectCodeEditor("MIPS.v", 390, 644); // bI:J (JPanel:JComponent, cg:JFrame)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
+// Elapsed time: 92 seconds
+selectCodeEditor("MIPS.v", 329, 283); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 215, 182); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("MIPS.v", 237, 77); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 248, 105); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 214, 139); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 216, 166); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 36 seconds
+selectCodeEditor("MIPS.v", 178, 372); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 105, 560); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 39 seconds
+selectCodeEditor("MIPS.v", 94, 246); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 81, 238); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 126, 409); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 172, 251); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 169, 561); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 87, 116); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 90, 121); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 167, 629); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 177, 500); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 146, 594); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("MIPS.v", 137, 681); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 136, 613); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 216, 231); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 325, 264); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 126, 284); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 251, 184); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 156, 239); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 521, 263); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("MIPS.v", 708, 236); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 541, 231); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 735, 234); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 703, 242); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 651, 250); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 584, 237); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 695, 236); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 625, 284); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("MIPS.v", 205, 92); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("MIPS.v", 150, 58); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 150, 58, false, false, false, false, true); // bI:J (JPanel:JComponent, cg:JFrame) - Double Click
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 108, 90); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 108, 90, false, false, false, false, true); // bI:J (JPanel:JComponent, cg:JFrame) - Double Click
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 171, 91); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("MIPS.v", 199, 119); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 17 seconds
+selectCodeEditor("MIPS.v", 137, 85); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("MIPS.v", 5, 210); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 103, 261); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 1, 210); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 21 seconds
+selectCodeEditor("MIPS.v", 122, 322); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 220, 294); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("MIPS.v", 303, 326); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 17 seconds
+selectCodeEditor("MIPS.v", 177, 412); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 191, 460); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 190, 609); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 118, 464); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 190, 611); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 389, 579); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 37 seconds
+selectCodeEditor("MIPS.v", 301, 536); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 209, 386); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 160, 537); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 293, 551); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 207, 474); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 199, 481); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 33, 203); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 33, 203); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 370, 250); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("MIPS.v", 286, 294); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 67 seconds
+selectCodeEditor("MIPS.v", 438, 303); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 81 seconds
+selectCodeEditor("MIPS.v", 199, 307); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("MIPS.v", 305, 493); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 17 seconds
+selectCodeEditor("MIPS.v", 396, 426); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("MIPS.v", 176, 337); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 379, 385); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("MIPS.v", 255, 262); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 379, 261); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 383, 263); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 12 seconds
+selectCodeEditor("MIPS.v", 206, 311); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 46 seconds
+selectCodeEditor("MIPS.v", 429, 362); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("MIPS.v", 376, 286); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 614, 251); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("MIPS.v", 330, 358); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 331, 345); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("MIPS.v", 169, 354); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 349, 341); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 64, 311); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 67, 339); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 64, 358); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 25, 365); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 63, 365); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 61, 387); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 65, 405); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 311, 329); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("MIPS.v", 512, 314); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation]", 5); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bs:g (cg:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// bs:g (cg:JFrame):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Jul 12 20:36:36 2019] Launched synth_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/synth_1/runme.log [Fri Jul 12 20:36:36 2019] Launched impl_1... Run output will be captured here: C:/Users/dell/desktop/TCS_success2/TCS_success/TCS_Success.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bs:g (cg:JFrame)
+// Elapsed time: 29 seconds
+unMinimizeFrame(RDIResource.RDIViews_PROPERTIES, "Properties"); // ax:DockableFrame
+unMinimizeFrame(PAResourceOtoP.PAViews_HARDWARE, "Hardware"); // ax:DockableFrame
+// Elapsed time: 18 seconds
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "Properties", 1); // i:JideTabbedPane (JPanel:JComponent, cg:JFrame)
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "General", 0); // i:JideTabbedPane (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 10 seconds
+unMinimizeFrame(RDIResource.RDIViews_PROPERTIES, "Properties"); // ax:DockableFrame
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "Properties", 1); // i:JideTabbedPane (JPanel:JComponent, cg:JFrame)
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "Properties", 1); // i:JideTabbedPane (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 772, 115); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// Elapsed time: 10 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k:JideButton (JPanel:JComponent, cg:JFrame)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw 
+selectCodeEditor("MIPS.v", 348, 190); // bI:J (JPanel:JComponent, cg:JFrame)
+// bs:g (cg:JFrame):  CLose Hardware Manager : addNotify
+dismissDialog("CLose Hardware Manager"); // bs:g (cg:JFrame)
+selectCodeEditor("MIPS.v", 350, 203); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 163, 220); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 159, 229); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 14 seconds
+selectCodeEditor("MIPS.v", 212, 175); // bI:J (JPanel:JComponent, cg:JFrame)
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // M:a (Workspace:JPanel, cg:JFrame)
+selectCodeEditor("MIPS.v", 67, 348); // bI:J (JPanel:JComponent, cg:JFrame)
+selectButton(PAResourceQtoS.SyntheticaStateMonitor_CANCEL, "Cancel"); // h:k (JPanel:JComponent, cg:JFrame)
+// aN:g (cg:JFrame): Cancel Implementation: addNotify
+selectButton(PAResourceQtoS.StateMonitor_RESET_STEP, "Reset Step"); // a:JButton (JPanel:JComponent, aN:g)
+// bs:g (cg:JFrame):  Reset to Previous Step : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Cancel Implementation"); // aN:g (cg:JFrame)
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run impl_1 -prev_step  
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Reset to Previous Step"); // bs:g (cg:JFrame)
+selectCodeEditor("MIPS.v", 240, 267); // bI:J (JPanel:JComponent, cg:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 623 MB. GUI used memory: 51 MB. Current time: 7/12/19 8:38:54 PM CST
+// Elapsed time: 37 seconds
+selectCodeEditor("MIPS.v", 313, 366); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 183, 399); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 388, 362); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 164, 319); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 47 seconds
+selectCodeEditor("MIPS.v", 58, 333); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 53, 260); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 43 seconds
+selectCodeEditor("MIPS.v", 191, 567); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 314, 590); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 324, 514); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 22 seconds
+selectCodeEditor("MIPS.v", 445, 421); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 434, 263); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("MIPS.v", 342, 511); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 279, 548); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 282, 561); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 17 seconds
+selectCodeEditor("MIPS.v", 172, 615); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 289, 583); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 308, 590); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 230, 584); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 215, 599); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 250, 120); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 212, 171); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 225, 184); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 121, 397); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("MIPS.v", 198, 380); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 191, 465); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 154, 449); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 222, 465); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 100, 446); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 3, 61); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'c'); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 107, 476); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 148, 378); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 133, 361); // bI:J (JPanel:JComponent, cg:JFrame)
+typeControlKey((HResource) null, "MIPS.v", 'v'); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("MIPS.v", 412, 306); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 24, 260); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 127, 617); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 129, 617); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 316, 297); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 187, 278); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 126, 224); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 366, 319); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 140, 379); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 26, 408); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 0, 408); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 448, 486); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("MIPS.v", 422, 479); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 23 seconds
+selectCodeEditor("MIPS.v", 351, 358); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 106, 470); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 20, 416); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 79, 320); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 552, 235); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 14 seconds
+selectCodeEditor("MIPS.v", 187, 281); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 470, 263); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 449, 311); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectCodeEditor("MIPS.v", 43, 540); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 128, 543); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 213, 488); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 236, 489); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 245, 532); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 329, 492); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 11 seconds
+selectCodeEditor("MIPS.v", 1076, 185); // bI:J (JPanel:JComponent, cg:JFrame)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regfile"); // l:X (ax:e, cg:JFrame)
+selectCodeEditor("MIPS.v", 582, 704); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 588, 706); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("MIPS.v", 668, 531); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("MIPS.v", 337, 412); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 14 seconds
+selectCodeEditor("MIPS.v", 418, 500); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 434, 431); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 1179, 385); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("MIPS.v", 351, 199); // bI:J (JPanel:JComponent, cg:JFrame)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regfile"); // l:X (ax:e, cg:JFrame)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regfile"); // l:X (ax:e, cg:JFrame)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regfile"); // l:X (ax:e, cg:JFrame)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regfile"); // l:X (ax:e, cg:JFrame)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regfile"); // l:X (ax:e, cg:JFrame)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regfile"); // l:X (ax:e, cg:JFrame)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regfile"); // l:X (ax:e, cg:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("MIPS.v", 387, 390); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 353, 338); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 389, 313); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("MIPS.v", 538, 337); // bI:J (JPanel:JComponent, cg:JFrame)

@@ -1,0 +1,1414 @@
+.text
+
+#$s0 	为蛇运动方向
+#$s1 	存放蛇头的方吿 00(up) 01(right) 10(down) 11(left)
+#$s2	辅助判断蛇头位置，进入相应子程序
+#$s3 	暂时存储蛇身位置
+#$s4	计数进行难度控制
+#$s5	判断是否进入over
+#$s6	判断是否进入over
+#$s7	判断吃掉的食物数量
+
+
+#$t1 	存用户按下的按键
+#$t2 	存放蛇头的位置
+#$t3 	判断蛇头位置，计算下一步运动
+#$t4 	难度系数 1简单，2中等，4困难
+#$t5	判断是否进入over
+#$t6	食物位置
+#$t7	计算蛇头和食物的位置和
+#$t8	判断蛇头是否经过食物
+
+
+.globl main
+main:
+		#初始化三段蛇的位罿
+		addi 	$s0, 	$zero, 	5248
+		#初始化蛇头的方向,向右
+		addi 	$s1, 	$zero, 	1
+		#初始化食物的位置
+		andi	$t6,	$s0,	3
+		addi	$s7,	$zero,	0
+		#初始化$s5=0,表示未进入over
+		addi	$t5,	$zero	0
+		beq		$t5,	$t4		main
+		addi	$s5,	$zero,	0
+		addi	$s6,	$zero,	1
+		
+	logic:
+		
+		#无按键
+		beq		$s5,	$s6,	NOKEY_PORCESS
+		addi	$t1,	$zero,	0
+		beq		$t1,	$t0,	NOKEY
+		NOKEY_PORCESS:	
+		#左键
+		addi	$t1,	$zero,	16
+		beq		$t1,	$t0,	LEFT
+		#右键
+		addi 	$t1, 	$zero, 	8
+		beq 	$t1, 	$t0, 	RIGHT
+		#下键
+		addi	$t1,	$zero,	2
+		beq		$t1,	$t0,	DOWN
+		#上键
+		addi	$t1,	$zero,	4
+		beq		$t1,	$t0,	UP
+		#中键
+		addi	$t1,	$zero,	1
+		beq		$t1,	$t0, 	main
+		j 		logic	
+		
+	NOKEY:
+		#原方向向上
+		addi	$s2,	$zero,	0			
+		beq		$s2,	$s1,	dir_up
+		#原方向向右
+		addi	$s2,	$zero,	1
+		beq		$s2,	$s1,	dir_right
+		#原方向向下
+		addi	$s2,	$zero,	2
+		beq		$s2,	$s1,	dir_down
+		#原方向向左
+		addi	$s2,	$zero,	3
+		beq		$s2,	$s1,	dir_left
+	
+	LEFT:#向左移
+		addi	$t1,	$zero,	0
+		beq		$t1,	$t0,	next_l						
+		j		LEFT										
+	
+	RIGHT:#向右移
+		addi	$t1,	$zero,	0
+		beq		$t1,	$t0,	next_r						#按键弹起时在执行计算位置逻辑
+		j		RIGHT									
+	
+	DOWN:#向下移	
+		addi	$t1,	$zero,	0
+		beq		$t1,	$t0,	next_d
+		j		DOWN
+	
+	UP:#向上移
+		addi	$t1,	$zero,	0
+		beq		$t1,	$t0,	next_u
+		j		UP
+		
+		dir_up:
+			#延时一段时间
+			addi	$s4,	$zero,	0
+			addi	$t5,	$zero,	1
+			addi	$s5,	$zero,	1048576
+			beq		$t4,	$t5,	count_up
+			addi	$t5,	$zero,	2
+			addi	$s5,	$zero,	393216
+			beq		$t4,	$t5,	count_up
+			addi	$t5,	$zero,	4
+			addi	$s5,	$zero,	262144
+			beq		$t4,	$t5,	count_up
+			count_up:
+				addi	$s4,	$s4,	1
+				#左键
+				addi	$t1,	$zero,	16
+				beq		$t1,	$t0,	LEFT
+				#右键
+				addi 	$t1, 	$zero, 	8
+				beq 	$t1, 	$t0, 	RIGHT
+				#下键
+				addi	$t1,	$zero,	2
+				beq		$t1,	$t0,	DOWN
+				#上键
+				addi	$t1,	$zero,	4
+				beq		$t1,	$t0,	UP
+				#中键
+				addi	$t1,	$zero,	1
+				beq		$t1,	$t0, 	main
+				beq		$s4,	$s5,	up_next
+				j		count_up
+			
+			up_next:
+			andi	$t2,	$s0,	31						#得到蛇头位置存至$t2
+			addi	$t3,	$zero,	4
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	1
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	11
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	8
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	18
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	15
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	25
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	22
+			beq		$t3,	$t2,	OVER
+	
+			addi	$t2,	$t2,	-1						#蛇头向上移动一位
+			add		$s3,	$zero,	$s0						#$s3暂存蛇的三段位置
+			sll		$s3,	$s3,	5						#蛇身左移五位
+			or		$s3,	$s3,	$t2						#重新得到蛇的新位罿存放在$s3
+			add		$s0,	$zero,	$s3						
+			j		logic
+
+		dir_down:
+			#延时一段时间
+			addi	$s4,	$zero,	0
+			addi	$t5,	$zero,	1
+			addi	$s5,	$zero,	1048576
+			beq		$t4,	$t5,	count_down
+			addi	$t5,	$zero,	2
+			addi	$s5,	$zero,	393216
+			beq		$t4,	$t5,	count_down
+			addi	$t5,	$zero,	4
+			addi	$s5,	$zero,	262144
+			beq		$t4,	$t5,	count_down
+			count_down:
+				addi	$s4,	$s4,	1
+				#左键
+				addi	$t1,	$zero,	16
+				beq		$t1,	$t0,	LEFT
+				#右键
+				addi 	$t1, 	$zero, 	8
+				beq 	$t1, 	$t0, 	RIGHT
+				#下键
+				addi	$t1,	$zero,	2
+				beq		$t1,	$t0,	DOWN
+				#上键
+				addi	$t1,	$zero,	4
+				beq		$t1,	$t0,	UP
+				#中键
+				addi	$t1,	$zero,	1
+				beq		$t1,	$t0, 	main
+				beq		$s4,	$s5,	down_next
+				j		count_down
+			
+			down_next:
+			andi	$t2,	$s0,	31						#得到蛇头位置存至$t2
+			addi	$t3,	$zero,	5
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	2
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	12
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	9
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	19
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	16
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	26
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	23
+			beq		$t3,	$t2,	OVER
+			
+			addi	$t2,	$t2,	1						#蛇头向下移动一位
+			add		$s3,	$zero,	$s0						#$s3暂存蛇的三段位置
+			sll		$s3,	$s3,	5						#蛇身左移五位
+			or		$s3,	$s3,	$t2						#重新得到蛇的新位罿$s3
+			add		$s0,	$zero,	$s3						
+			j		logic
+		
+		
+		
+		dir_left:
+			#延时一段时间
+			addi	$s4,	$zero,	0
+			addi	$t5,	$zero,	1
+			addi	$s5,	$zero,	1048576
+			beq		$t4,	$t5,	count_left
+			addi	$t5,	$zero,	2
+			addi	$s5,	$zero,	393216
+			beq		$t4,	$t5,	count_left
+			addi	$t5,	$zero,	4
+			addi	$s5,	$zero,	262144
+			beq		$t4,	$t5,	count_left
+			count_left:
+				addi	$s4,	$s4,	1
+				#左键
+				addi	$t1,	$zero,	16
+				beq		$t1,	$t0,	LEFT
+				#右键
+				addi 	$t1, 	$zero, 	8
+				beq 	$t1, 	$t0, 	RIGHT
+				#下键
+				addi	$t1,	$zero,	2
+				beq		$t1,	$t0,	DOWN
+				#上键
+				addi	$t1,	$zero,	4
+				beq		$t1,	$t0,	UP
+				#中键
+				addi	$t1,	$zero,	1
+				beq		$t1,	$t0, 	main
+				beq		$s4,	$s5,	left_next_judge
+				j		count_left
+
+			left_next_judge:
+			andi	$t2,	$s0,	31
+			add 	$t7,	$t6,	$t2
+			#addi	$t8,	$zero,	3
+			#beq	$t7,	$t8,	left_next_add
+			addi	$t8,	$zero,	10
+			beq		$t7,	$t8,	left_next_add		
+			addi	$t8,	$zero,	18
+			beq		$t7,	$t8,	left_next_add	
+			addi	$t8,	$zero,	26
+			beq		$t7,	$t8,	left_next_add
+			j 		left_next
+			
+			left_next_add:
+			andi	$t2,	$s0,	31						#得到蛇头位置存至$t2
+			addi	$t3,	$zero,	0
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	6
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	3
+			beq		$t3,	$t2,	OVER
+			
+			addi	$t2,	$t2,	-7						#蛇头向左移动一位
+			add		$s3,	$zero,	$s0						#$s3暂存蛇的三段位置
+			sll		$s3,	$s3,	5						#蛇身左移五位
+			or		$s3,	$s3,	$t2						#重新得到蛇的新位罿$s3
+			add		$s0,	$zero,	$s3						
+			addi	$s7,	$s7,	1
+			andi	$t6,	$s0,	3
+			j		logic			
+
+			left_next:
+			andi	$t2,	$s0,	31						#得到蛇头位置存至$t2
+			addi	$t3,	$zero,	0
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	6
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	3
+			beq		$t3,	$t2,	OVER
+			
+			addi	$t2,	$t2,	-7						#蛇头向左移动一位
+			add		$s3,	$zero,	$s0						#$s3暂存蛇的三段位置
+			sll		$s3,	$s3,	5						#蛇身左移五位
+			or		$s3,	$s3,	$t2						#重新得到蛇的新位罿$s3
+			add		$s0,	$zero,	$s3						
+			j		logic
+		
+		
+		
+		dir_right:
+			#延时一段时间
+			addi	$s4,	$zero,	0
+			addi	$t5,	$zero,	1
+			addi	$s5,	$zero,	1048576
+			beq		$t4,	$t5,	count_right
+			addi	$t5,	$zero,	2
+			addi	$s5,	$zero,	393216
+			beq		$t4,	$t5,	count_right
+			addi	$t5,	$zero,	4
+			addi	$s5,	$zero,	262144
+			beq		$t4,	$t5,	count_right
+			count_right:
+				addi	$s4,	$s4,	1
+				#左键
+				addi	$t1,	$zero,	16
+				beq		$t1,	$t0,	LEFT
+				#右键
+				addi 	$t1, 	$zero, 	8
+				beq 	$t1, 	$t0, 	RIGHT
+				#下键
+				addi	$t1,	$zero,	2
+				beq		$t1,	$t0,	DOWN
+				#上键
+				addi	$t1,	$zero,	4
+				beq		$t1,	$t0,	UP
+				#中键
+				addi	$t1,	$zero,	1
+				beq		$t1,	$t0, 	main
+				beq		$s4,	$s5,	right_next_judge
+				j		count_right
+
+			right_next_judge:
+			andi	$t2,	$s0,	31
+			add 	$t7,	$t6,	$t2
+			addi	$t8,	$zero,	3
+			beq		$t7,	$t8,	right_next_add
+			addi	$t8,	$zero,	11
+			beq		$t7,	$t8,	right_next_add		
+			addi	$t8,	$zero,	19
+			beq		$t7,	$t8,	right_next_add	
+			#addi	$t8,	$zero,	27
+			#beq		$t7,	$t8,	right_next_add
+			j 		right_next
+		
+			right_next_add:
+			andi	$t2,	$s0,	31						#得到蛇头位置存至$t2
+			addi 	$t3,	$zero,	21						#蛇头在最右再向右直接over
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	27
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	24
+			beq		$t3,	$t2,	OVER
+			
+			addi	$t2,	$t2,	7						#蛇头向右移动一位
+			add		$s3,	$zero,	$s0						#$s3暂存蛇的三段位置
+			sll		$s3,	$s3,	5						#蛇身左移五位
+			or		$s3,	$s3,	$t2						#重新得到蛇的新位罿$s3
+			add		$s0,	$zero,	$s3						
+
+			addi	$s7,	$s7,	1
+			andi	$t6,	$s0,	3
+			j		logic
+
+			right_next:
+			andi	$t2,	$s0,	31						#得到蛇头位置存至$t2
+			addi	$t3,	$zero,	21						#蛇头在最右再向右直接over
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	27
+			beq		$t3,	$t2,	OVER
+			addi	$t3,	$zero,	24
+			beq		$t3,	$t2,	OVER
+			
+			addi	$t2,	$t2,	7						#蛇头向右移动一位
+			add		$s3,	$zero,	$s0						#$s3暂存蛇的三段位置
+			sll		$s3,	$s3,	5						#蛇身左移五位
+			or		$s3,	$s3,	$t2						#重新得到蛇的新位罿$s3
+			add		$s0,	$zero,	$s3						
+			j		logic
+		
+		
+		
+		
+		next_l:
+			andi	$t2,	$s0,	31						#得到蛇头位置存至$t2
+			#蛇头向左移动
+			addi	$s2,	$zero,	3
+			beq		$s2,	$s1,	next_horizontal_left
+			#蛇头向上移动
+			addi	$s2,	$zero,	0
+			beq		$s2,	$s1,	next_up_left
+			#蛇头向下运动
+			addi	$s2,	$zero,	2
+			beq		$s2,	$s1,	next_down_left
+			#蛇头向右移动
+			addi	$s2,	$zero,	1
+			addi	$s4,	$zero,	0
+			addi    $t9,    $zero,  0
+			addi	$t5,	$zero,	1
+			addi	$s5,	$zero,	1048576
+			beq		$t4,	$t5,	cnt_right
+			addi	$t5,	$zero,	2
+			addi	$s5,	$zero,	393216
+			beq		$t4,	$t5,	cnt_right
+			addi	$t5,	$zero,	4
+			addi	$s5,	$zero,	262144
+			beq		$t4,	$t5,	cnt_right
+			cnt_right:
+				addi    $s4, $s4,  1
+				sub     $t9, $s4, $s5
+				bgtz    $t9,	next_horizontal_right
+				j		cnt_right
+		
+		next_r:
+			andi	$t2,	$s0,	31 						#得到蛇头位置存至$t2
+			#蛇头向右移动
+			addi	$s2,	$zero,	1				
+			beq		$s2,	$s1,	next_horizontal_right 	#右水平走
+			#蛇头向上移动
+			addi	$s2,	$zero,	0			
+			beq		$s2,	$s1,	next_up_right			#上右拐
+			#蛇头向下移动
+			addi	$s2,	$zero,	2			
+			beq		$s2,	$s1,	next_down_right			#下右拐
+			#蛇头向左移动
+			addi	$s2,	$zero,	3						
+			addi	$s4,	$zero,	0
+			addi    $t9,    $zero,  0
+			addi	$t5,	$zero,	1
+			addi	$s5,	$zero,	1048576
+			beq		$t4,	$t5,	cnt_left
+			addi	$t5,	$zero,	2
+			addi	$s5,	$zero,	393216
+			beq		$t4,	$t5,	cnt_left
+			addi	$t5,	$zero,	4
+			addi	$s5,	$zero,	262144
+			beq		$t4,	$t5,	cnt_left
+			cnt_left:
+				addi	$s4,	$s4,	1
+				sub     $t9,    $s4,    $s5
+				bgtz	$t9,	next_horizontal_left
+				j		cnt_left
+			
+		next_d:
+			andi	$t2,	$s0,	31						#得到蛇头位置存至$t2
+			#蛇头向右移动
+			addi	$s2,	$zero,	1
+			beq		$s2,	$s1,	next_right_down
+			#蛇头向左移动
+			addi	$s2,	$zero,	3
+			beq		$s2,	$s1,	next_left_down
+			#蛇头向下移动
+			addi	$s2,	$zero,	2
+			beq		$s2,	$s1,	next_vertical_down
+			#蛇头向上运动
+			addi	$t3,	$zero,	0
+			addi	$s4,	$zero,	0
+			addi	$t5,	$zero,	1
+			addi    $t9,    $zero,  0
+			addi	$s5,	$zero,	1048576
+			beq		$t4,	$t5,	cnt_up
+			addi	$t5,	$zero,	2
+			addi	$s5,	$zero,	393216
+			beq		$t4,	$t5,	cnt_up
+			addi	$t5,	$zero,	4
+			addi	$s5,	$zero,	262144
+			beq		$t4,	$t5,	cnt_up
+			cnt_up:
+				addi	$s4,	$s4,	1
+				sub     $t9,    $s4,    $s5
+				bgtz    $t9,	next_vertical_up
+				j		cnt_up
+			
+		next_u:
+			andi	$t2,	$s0,	31						#得到蛇头位置存至$t2
+			#蛇头向右移动
+			addi	$s2,	$zero,	1
+			beq		$s2,	$s1,	next_right_up
+			#蛇头向左移动
+			addi	$s2,	$zero,	3
+			beq		$s2,	$s1,	next_left_up
+			#蛇头向上移动
+			addi	$s2,	$zero,	0
+			beq		$s2,	$s1,	next_vertical_up
+			#蛇头向下运动
+			addi	$t3,	$zero,	2
+			addi	$s4,	$zero,	0
+			addi    $t9,    $zero,  0
+			addi	$t5,	$zero,	1
+			addi	$s5,	$zero,	1048576
+			beq		$t4,	$t5,	cnt_down
+			addi	$t5,	$zero,	2
+			addi	$s5,	$zero,	393216
+			beq		$t4,	$t5,	cnt_down
+			addi	$t5,	$zero,	4
+			addi	$s5,	$zero,	262144
+			beq		$t4,	$t5,	cnt_down
+			cnt_down:
+				addi	$s4,	$s4,	1
+				sub     $t9,    $s4,    $s5
+				bgtz    $t9,    next_vertical_down
+				j		cnt_down
+		#====================================================按下上键=============================================================================			
+		next_vertical_up:
+			addi	$t3,	$zero,	4
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	1
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	11
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	8
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	18
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	15
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	25
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	22
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	5
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	2
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	12
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	9
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	19
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	16
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	26
+			beq		$t3,	$t2,	vertical_up	
+			addi	$t3,	$zero,	23
+			beq		$t3,	$t2,	vertical_up	
+			j		OVER
+			
+		next_right_up:
+			addi	$t3,	$zero,	0
+			beq		$t3,	$t2,	right_up_up
+			addi	$t3,	$zero,	7
+			beq		$t3,	$t2,	right_up_up
+			addi	$t3,	$zero,	14
+			beq		$t3,	$t2,	right_up_up
+			addi	$t3,	$zero,	21
+			beq		$t3,	$t2,	right_up_up
+			addi	$t3,	$zero,	6
+			beq		$t3,	$t2,	right_up_middle
+			addi	$t3,	$zero,	13
+			beq		$t3,	$t2,	right_up_middle
+			addi	$t3,	$zero,	20
+			beq		$t3,	$t2,	right_up_middle
+			addi	$t3,	$zero,	27
+			beq		$t3,	$t2,	right_up_middle
+			addi	$t3,	$zero,	3
+			beq		$t3,	$t2,	right_up_down_judge
+			addi	$t3,	$zero,	10
+			beq		$t3,	$t2,	right_up_down_judge
+			addi	$t3,	$zero,	17
+			beq		$t3,	$t2,	right_up_down_judge
+			addi	$t3,	$zero,	24
+			beq		$t3,	$t2,	right_up_down_judge
+			j		OVER
+			
+		next_left_up:
+			addi	$t3,	$zero,	0
+			beq		$t3,	$t2,	left_up_up
+			addi	$t3,	$zero,	7
+			beq		$t3,	$t2,	left_up_up
+			addi	$t3,	$zero,	14
+			beq		$t3,	$t2,	left_up_up
+			addi	$t3,	$zero,	21
+			beq		$t3,	$t2,	left_up_up
+			addi	$t3,	$zero,	6
+			beq		$t3,	$t2,	left_up_middle
+			addi	$t3,	$zero,	13
+			beq		$t3,	$t2,	left_up_middle
+			addi	$t3,	$zero,	20
+			beq		$t3,	$t2,	left_up_middle
+			addi	$t3,	$zero,	27
+			beq		$t3,	$t2,	left_up_middle
+			addi	$t3,	$zero,	3
+			beq		$t3,	$t2,	left_up_down
+			addi	$t3,	$zero,	10
+			beq		$t3,	$t2,	left_up_down
+			addi	$t3,	$zero,	17
+			beq		$t3,	$t2,	left_up_down
+			addi	$t3,	$zero,	24
+			beq		$t3,	$t2,	left_up_down
+			j		OVER
+			
+			vertical_up:
+				addi	$t3,	$zero,	4
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	1
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	11
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	8
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	18
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	15
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	25
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	22
+				beq		$t3,	$t2,	OVER
+				
+				addi	$t2,	$t2,	-1 				#蛇头垂直向上移一使
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	0
+				j		logic
+			
+			right_up_up:
+				j		OVER
+			
+			right_up_middle:
+				addi	$t2,	$t2,	-5 				#蛇头右上拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	0				#向上转后蛇头方向
+				j		logic
+			
+			right_up_down_judge:
+				add	$t7,	$t6,	$t2
+				addi	$t8,	$zero,	3
+				beq		$t7,	$t8,	right_up_down_add
+				addi	$t8,	$zero,	11
+				beq		$t7,	$t8,	right_up_down_add				
+				addi	$t8,	$zero,	19
+				beq		$t7,	$t8,	right_up_down_add				
+				addi	$t8,	$zero,	27
+				beq		$t7,	$t8,	right_up_down_add
+				j 		right_up_down
+
+			right_up_down:
+				addi	$t2,	$t2,	-1 				#蛇头右上拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	0				
+				j		logic
+
+			right_up_down_add:
+
+				addi	$t2,	$t2,	-1 				#蛇头右上拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	0				
+
+				andi	$t6,	$s0,	3
+				addi	$s7,	$s7,	1
+				j		logic
+
+			left_up_up:
+				j		OVER
+				
+			left_up_middle:
+				addi	$t2,	$t2,	-2 				#蛇头左上拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	0				
+				j		logic
+			
+			left_up_down:
+				addi	$t2,	$t2,	2 				#蛇头左上拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	0				
+				j		logic
+			
+			
+			
+		#====================================================按下下键=============================================================================			
+		next_vertical_down:
+			addi	$t3,	$zero,	4
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	1
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	11
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	8
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	18
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	15
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	25
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	22
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	5
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	2
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	12
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	9
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	19
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	16
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	26
+			beq		$t3,	$t2,	vertical_down
+			addi	$t3,	$zero,	23
+			beq		$t3,	$t2,	vertical_down
+			j		OVER
+			
+		next_left_down:
+			addi	$t3,	$zero,	0
+			beq		$t3,	$t2,	left_down_up
+			addi	$t3,	$zero,	7
+			beq		$t3,	$t2,	left_down_up
+			addi	$t3,	$zero,	14
+			beq		$t3,	$t2,	left_down_up
+			addi	$t3,	$zero,	21
+			beq		$t3,	$t2,	left_down_up
+			addi	$t3,	$zero,	6
+			beq		$t3,	$t2,	left_down_middle
+			addi	$t3,	$zero,	13
+			beq		$t3,	$t2,	left_down_middle
+			addi	$t3,	$zero,	20
+			beq		$t3,	$t2,	left_down_middle
+			addi	$t3,	$zero,	27
+			beq		$t3,	$t2,	left_down_middle
+			addi	$t3,	$zero,	3
+			beq		$t3,	$t2,	left_down_down
+			addi	$t3,	$zero,	10
+			beq		$t3,	$t2,	left_down_down
+			addi	$t3,	$zero,	17
+			beq		$t3,	$t2,	left_down_down
+			addi	$t3,	$zero,	24
+			beq		$t3,	$t2,	left_down_down
+			j		OVER
+
+		next_right_down:
+			addi	$t3,	$zero,	0
+			beq		$t3,	$t2,	right_down_up
+			addi	$t3,	$zero,	7
+			beq		$t3,	$t2,	right_down_up
+			addi	$t3,	$zero,	14
+			beq		$t3,	$t2,	right_down_up
+			addi	$t3,	$zero,	21
+			beq		$t3,	$t2,	right_down_up
+			addi	$t3,	$zero,	6
+			beq		$t3,	$t2,	right_down_middle
+			addi	$t3,	$zero,	13
+			beq		$t3,	$t2,	right_down_middle
+			addi	$t3,	$zero,	20
+			beq		$t3,	$t2,	right_down_middle
+			addi	$t3,	$zero,	27
+			beq		$t3,	$t2,	right_down_middle
+			addi	$t3,	$zero,	3
+			beq		$t3,	$t2,	right_down_down
+			addi	$t3,	$zero,	10
+			beq		$t3,	$t2,	right_down_down
+			addi	$t3,	$zero,	17
+			beq		$t3,	$t2,	right_down_down
+			addi	$t3,	$zero,	24
+			beq		$t3,	$t2,	right_down_down
+			j		OVER
+		
+		
+			vertical_down:
+				addi	$t3,	$zero,	5
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	2
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	12
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	9
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	19
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	16
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	26
+				beq		$t3,	$t2,	OVER
+				addi	$t3,	$zero,	23
+				beq		$t3,	$t2,	OVER
+				
+				addi	$t2,	$t2,	1 				#蛇头垂直向下移一使
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	2
+				j		logic
+			
+			left_down_up:
+				addi	$t2,	$t2,	4 				#蛇头左下拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	2				#向右转后蛇头方向为右
+				j		logic
+				
+			left_down_middle:
+				addi	$t2,	$t2,	-1 				#蛇头左下拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	2				#向右转后蛇头方向为右
+				j		logic
+				
+			left_down_down:
+				j		OVER
+			
+			right_down_up:
+				addi	$t2,	$t2,	1				#蛇头右下拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	2				#向右转后蛇头方向为右
+				j		logic
+				
+			right_down_middle:
+				addi	$t2,	$t2,	-4				#蛇头右下拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	2				#向右转后蛇头方向为右
+				j		logic
+				
+			right_down_down:
+				j		OVER
+			
+		#====================================================按下右键=============================================================================		
+		next_horizontal_right:
+			#上中丿 水平殿
+			addi	$t3,	$zero,	0
+			beq		$t2,	$t3,	horizontal_right
+			addi	$t3,	$zero,	7
+			beq		$t2,	$t3,	horizontal_right
+			addi	$t3,	$zero,	14
+			beq		$t2,	$t3,	horizontal_right
+			addi	$t3,	$zero,	21
+			beq		$t2,	$t3,	horizontal_right
+			addi	$t3,	$zero,	6
+			beq		$t2,	$t3,	horizontal_right
+			addi	$t3,	$zero,	13
+			beq		$t2,	$t3,	horizontal_right
+			addi	$t3,	$zero,	20
+			beq		$t2,	$t3,	horizontal_right
+			addi	$t3,	$zero,	27
+			beq		$t2,	$t3,	horizontal_right
+			addi	$t3,	$zero,	3
+			beq		$t2,	$t3,	horizontal_right_judge
+			addi	$t3,	$zero,	10
+			beq		$t2,	$t3,	horizontal_right_judge
+			addi	$t3,	$zero,	17
+			beq		$t2,	$t3,	horizontal_right_judge
+			addi	$t3,	$zero,	24
+			beq		$t2,	$t3,	horizontal_right_judge
+			j		OVER									
+		next_down_right:
+			#上面左侧的段
+			addi	$t3,	$zero,	4
+			beq		$t2,	$t3,	down_right_up_left
+			addi	$t3,	$zero,	11
+			beq		$t2,	$t3,	down_right_up_left
+			addi	$t3,	$zero,	18
+			beq		$t2,	$t3,	down_right_up_left
+			addi	$t3,	$zero,	25
+			beq		$t2,	$t3,	down_right_up_left
+			#下面左侧的段
+			addi	$t3,	$zero,	5
+			beq		$t2,	$t3,	down_right_down_left
+			addi	$t3,	$zero,	12
+			beq		$t2,	$t3,	down_right_down_left
+			addi	$t3,	$zero,	19
+			beq		$t2,	$t3,	down_right_down_left
+			addi	$t3,	$zero,	26
+			beq		$t2,	$t3,	down_right_down_left
+			#上面右侧的段
+			addi	$t3,	$zero,	1
+			beq		$t2,	$t3,	down_right_up_right
+			addi	$t3,	$zero,	8
+			beq		$t2,	$t3,	down_right_up_right
+			addi	$t3,	$zero,	15
+			beq		$t2,	$t3,	down_right_up_right
+			addi	$t3,	$zero,	22
+			beq		$t2,	$t3,	down_right_up_right
+			#下面右侧的段
+			addi	$t3,	$zero,	2
+			beq		$t2,	$t3,	down_right_down_right_judge
+			addi	$t3,	$zero,	9
+			beq		$t2,	$t3,	down_right_down_right_judge
+			addi	$t3,	$zero,	16
+			beq		$t2,	$t3,	down_right_down_right_judge
+			addi	$t3,	$zero,	23
+			beq		$t2,	$t3,	down_right_down_right_judge
+			j		OVER
+		
+		next_up_right:
+			#上面左侧的段
+			addi	$t3,	$zero,	4
+			beq		$t2,	$t3,	up_right_up_left
+			addi	$t3,	$zero,	11
+			beq		$t2,	$t3,	up_right_up_left
+			addi	$t3,	$zero,	18
+			beq		$t2,	$t3,	up_right_up_left
+			addi	$t3,	$zero,	25
+			beq		$t2,	$t3,	up_right_up_left
+			#下面左侧的段
+			addi	$t3,	$zero,	5
+			beq		$t2,	$t3,	up_right_down_left
+			addi	$t3,	$zero,	12
+			beq		$t2,	$t3,	up_right_down_left
+			addi	$t3,	$zero,	19
+			beq		$t2,	$t3,	up_right_down_left
+			addi	$t3,	$zero,	26
+			beq		$t2,	$t3,	up_right_down_left
+			#上面右侧的段
+			addi	$t3,	$zero,	1
+			beq		$t2,	$t3,	up_right_up_right
+			addi	$t3,	$zero,	8
+			beq		$t2,	$t3,	up_right_up_right
+			addi	$t3,	$zero,	15
+			beq		$t2,	$t3,	up_right_up_right
+			addi	$t3,	$zero,	22
+			beq		$t2,	$t3,	up_right_up_right
+			#下面右侧的段
+			addi	$t3,	$zero,	2
+			beq		$t2,	$t3,	up_right_down_right
+			addi	$t3,	$zero,	9
+			beq		$t2,	$t3,	up_right_down_right
+			addi	$t3,	$zero,	16
+			beq		$t2,	$t3,	up_right_down_right
+			addi	$t3,	$zero,	23
+			beq		$t2,	$t3,	up_right_down_right
+			j		OVER
+
+			horizontal_right_judge:
+				add 	$t7,	$t6,	$t2
+				addi	$t8,	$zero,	3
+				beq		$t7,	$t8,	horizontal_right_add
+				addi	$t8,	$zero,	11
+				beq		$t7,	$t8,	horizontal_right_add				
+				addi	$t8,	$zero,	19
+				beq		$t7,	$t8,	horizontal_right_add				
+				#addi	$t8,	$zero,	27
+				#beq	$t7,	$t8,	horizontal_right_add
+				j 		horizontal_right	
+
+			horizontal_right:
+				addi	$t3,	$zero,	21
+				beq		$t2,	$t3,	OVER
+				addi	$t3,	$zero,	27
+				beq		$t2,	$t3,	OVER
+				addi	$t3,	$zero,	24
+				beq		$t2,	$t3,	OVER
+				
+					
+				addi	$t2,	$t2,	7 				#蛇头水平右移
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#修改蛇头的方吿,仍为向右
+				j		logic
+
+			horizontal_right_add:
+
+				addi	$t3,	$zero,	21
+				beq		$t2,	$t3,	OVER
+				addi	$t3,	$zero,	27
+				beq		$t2,	$t3,	OVER
+				addi	$t3,	$zero,	24
+				beq		$t2,	$t3,	OVER
+				
+					
+				addi	$t2,	$t2,	7 				#蛇头水平右移
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#修改蛇头的方吿,仍为向右
+
+				andi	$t6,	$s0,	3
+				addi	$s7,	$s7,	1
+				j		logic
+			#============================================================================
+			up_right_up_left:
+				addi	$t2,	$t2,	-4 				#蛇头向上右拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#向右转后蛇头方向为右
+				j		logic
+			up_right_up_right:
+				addi	$t3,	$zero,	22
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	6 				#蛇头向上右拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#向右转后蛇头方向为右
+				j		logic
+			
+			up_right_down_left:
+				addi	$t2,	$t2,	1 				#蛇头向上右拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#向右转后蛇头方向为右
+				j		logic
+				
+			up_right_down_right:
+				addi	$t3,	$zero,	23
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	11				#蛇头向上右拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#向右转后蛇头方向为右
+				j		logic
+			
+			
+			#============================================================================
+			down_right_up_left:
+				addi	$t2,	$t2,	2				#蛇头向上右拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#向右转后蛇头方向为右
+				j		logic
+			down_right_up_right:
+				addi	$t3,	$zero,	22
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	12				#蛇头向上右拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#向右转后蛇头方向为右
+				j		logic
+			
+			down_right_down_left:
+				addi	$t2,	$t2,	-2 				#蛇头向上右拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#向右转后蛇头方向为右
+				j		logic
+				
+			down_right_down_right_judge:
+				add		$t7,	$t6,	$t2
+				addi	$t8,	$zero,	2
+				beq		$t7,	$t8,	down_right_down_right_add
+				addi	$t8,	$zero,	10
+				beq		$t7,	$t8,	down_right_down_right_add				
+				addi	$t8,	$zero,	18
+				beq		$t7,	$t8,	down_right_down_right_add				
+				#addi	$t8,	$zero,	26
+				#beq		$t7,	$t8,	down_right_down_right_add
+				j 		down_right_down_right
+
+			down_right_down_right:
+				addi	$t3,	$zero,	23
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	8				#蛇头向上右拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#向右转后蛇头方向为右
+				j		logic
+
+			down_right_down_right_add:
+
+				addi	$t3,	$zero,	23
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	8				#蛇头向上右拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	1				#向右转后蛇头方向为右
+
+				andi	$t6,	$s0,	3
+				addi	$s7,	$s7,	1
+				j		logic
+		#====================================================按下左键=============================================================================		
+		next_horizontal_left:
+			addi	$t3,	$zero,	0
+			beq		$t2,	$t3,	horizontal_left
+			addi	$t3,	$zero,	7
+			beq		$t2,	$t3,	horizontal_left
+			addi	$t3,	$zero,	14
+			beq		$t2,	$t3,	horizontal_left
+			addi	$t3,	$zero,	21
+			beq		$t2,	$t3,	horizontal_left
+			addi	$t3,	$zero,	6
+			beq		$t2,	$t3,	horizontal_left
+			addi	$t3,	$zero,	13
+			beq		$t2,	$t3,	horizontal_left
+			addi	$t3,	$zero,	20
+			beq		$t2,	$t3,	horizontal_left
+			addi	$t3,	$zero,	27
+			beq		$t2,	$t3,	horizontal_left
+			addi	$t3,	$zero,	3
+			beq		$t2,	$t3,	horizontal_left_judge
+			addi	$t3,	$zero,	10
+			beq		$t2,	$t3,	horizontal_left_judge
+			addi	$t3,	$zero,	17
+			beq		$t2,	$t3,	horizontal_left_judge
+			addi	$t3,	$zero,	24
+			beq		$t2,	$t3,	horizontal_left_judge
+			j		OVER									
+			
+		next_up_left:
+			#上面左侧的段
+			addi	$t3,	$zero,	4
+			beq		$t2,	$t3,	up_left_up_left
+			addi	$t3,	$zero,	11
+			beq		$t2,	$t3,	up_left_up_left
+			addi	$t3,	$zero,	18
+			beq		$t2,	$t3,	up_left_up_left
+			addi	$t3,	$zero,	25
+			beq		$t2,	$t3,	up_left_up_left
+			#下面左侧的段
+			addi	$t3,	$zero,	5
+			beq		$t2,	$t3,	up_left_down_left
+			addi	$t3,	$zero,	12
+			beq		$t2,	$t3,	up_left_down_left
+			addi	$t3,	$zero,	19
+			beq		$t2,	$t3,	up_left_down_left
+			addi	$t3,	$zero,	26
+			beq		$t2,	$t3,	up_left_down_left
+			#上面右侧的段  没问题
+			addi	$t3,	$zero,	1
+			beq		$t2,	$t3,	up_left_up_right
+			addi	$t3,	$zero,	8
+			beq		$t2,	$t3,	up_left_up_right
+			addi	$t3,	$zero,	15
+			beq		$t2,	$t3,	up_left_up_right
+			addi	$t3,	$zero,	22
+			beq		$t2,	$t3,	up_left_up_right
+			#下面右侧的段
+			addi	$t3,	$zero,	2
+			beq		$t2,	$t3,	up_left_down_right
+			addi	$t3,	$zero,	9
+			beq		$t2,	$t3,	up_left_down_right
+			addi	$t3,	$zero,	16
+			beq		$t2,	$t3,	up_left_down_right
+			addi	$t3,	$zero,	23
+			beq		$t2,	$t3,	up_left_down_right
+			j		OVER
+		
+			
+		next_down_left:#整个逻辑问题
+			#上面左侧的段
+			addi	$t3,	$zero,	11
+			beq		$t2,	$t3,	down_left_up_left
+			addi	$t3,	$zero,	18
+			beq		$t2,	$t3,	down_left_up_left
+			addi	$t3,	$zero,	25
+			beq		$t2,	$t3,	down_left_up_left
+			addi	$t3,	$zero,	4
+			beq		$t2,	$t3,	down_left_up_left
+			#下面左侧的段
+			addi	$t3,	$zero,	12
+			beq		$t2,	$t3,	down_left_down_left_judge
+			addi	$t3,	$zero,	19
+			beq		$t2,	$t3,	down_left_down_left_judge
+			addi	$t3,	$zero,	26
+			beq		$t2,	$t3,	down_left_down_left_judge
+			addi	$t3,	$zero,	5
+			beq		$t2,	$t3,	down_left_down_left_judge
+			#上面右侧的段
+			addi	$t3,	$zero,	1
+			beq		$t2,	$t3,	down_left_up_right
+			addi	$t3,	$zero,	8
+			beq		$t2,	$t3,	down_left_up_right
+			addi	$t3,	$zero,	15
+			beq		$t2,	$t3,	down_left_up_right
+			addi	$t3,	$zero,	22
+			beq		$t2,	$t3,	down_left_up_right
+			#下面右侧的段
+			addi	$t3,	$zero,	2
+			beq		$t2,	$t3,	down_left_down_right_judge
+			addi	$t3,	$zero,	9
+			beq		$t2,	$t3,	down_left_down_right_judge
+			addi	$t3,	$zero,	16
+			beq		$t2,	$t3,	down_left_down_right_judge
+			addi	$t3,	$zero,	23
+			beq		$t2,	$t3,	down_left_down_right_judge
+			j		OVER
+
+			horizontal_left_judge:
+				add 	$t7,	$t6,	$t2
+				#addi	$t8,	$zero,	3
+				#beq	$t7,	$t8,	horizontal_left_add
+				addi	$t8,	$zero,	10
+				beq		$t7,	$t8,	horizontal_left_add				
+				addi	$t8,	$zero,	18
+				beq		$t7,	$t8,	horizontal_left_add				
+				addi	$t8,	$zero,	26
+				beq		$t7,	$t8,	horizontal_left_add
+				j 		horizontal_left
+			
+			horizontal_left:
+				addi	$t3,	$zero,	0
+				beq		$t2,	$t3,	OVER
+				addi	$t3,	$zero,	6
+				beq		$t2,	$t3,	OVER
+				addi	$t3,	$zero,	3
+				beq		$t2,	$t3,	OVER
+				
+					
+				addi	$t2,	$t2,	-7 				#蛇头水平左移
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				#修改蛇头的方吿,仍为向左
+				j		logic
+
+			horizontal_left_add:
+
+				addi	$t3,	$zero,	0
+				beq		$t2,	$t3,	OVER
+				addi	$t3,	$zero,	6
+				beq		$t2,	$t3,	OVER
+				addi	$t3,	$zero,	3
+				beq		$t2,	$t3,	OVER
+				
+					
+				addi	$t2,	$t2,	-7 				#蛇头水平左移
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				#修改蛇头的方吿,仍为向左
+
+				andi	$t6,	$s0,	3
+				addi	$s7,	$s7,	1
+				
+				j		logic
+			#============================================================================
+			up_left_up_left:
+				addi	$t3,	$zero,	4
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	-11				#蛇头向上左拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				#向右转后蛇头方向为左
+				j		logic
+
+			up_left_down_left:
+				addi	$t3,	$zero,	5
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	-6				#蛇头向上左拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				#向右转后蛇头方向为左
+				j		logic
+			
+			up_left_up_right:
+				addi	$t2,	$t2,	-1				#蛇头向上左拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				#向右转后蛇头方向为左
+				j		logic
+
+			up_left_down_right:
+				addi	$t2,	$t2,	4				#蛇头向上左拐
+				add		$s3,	$zero,	$s0				#$s3暂存蛇的三段位置
+				sll		$s3,	$s3,	5				#蛇身左移五位
+				or		$s3,	$s3,	$t2				#重新得到蛇的新位罿$s3
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				#向右转后蛇头方向为左
+				j		logic
+			#============================================================================
+			down_left_up_left:
+				addi	$t3,	$zero,	4
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	-5				
+				add		$s3,	$zero,	$s0				
+				sll		$s3,	$s3,	5				
+				or		$s3,	$s3,	$t2				
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				
+				j		logic
+
+			down_left_down_left_judge:
+				add 	$t7,	$t6,	$t2
+				#addi	$t8,	$zero,	5
+				#beq	$t7,	$t8,	down_left_down_left_add
+				addi	$t8,	$zero,	12
+				beq		$t7,	$t8,	down_left_down_left_add				
+				addi	$t8,	$zero,	20
+				beq		$t7,	$t8,	down_left_down_left_add				
+				addi	$t8,	$zero,	28
+				beq		$t7,	$t8,	down_left_down_left_add
+				j 		down_left_down_left
+			
+			down_left_down_left:
+				addi	$t3,	$zero,	5
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	-9				
+				add		$s3,	$zero,	$s0				
+				sll		$s3,	$s3,	5				
+				or		$s3,	$s3,	$t2				
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				
+				j		logic
+
+			down_left_down_left_add:
+
+
+				addi	$t3,	$zero,	5
+				beq		$t2,	$t3,	OVER
+				
+				addi	$t2,	$t2,	-9				
+				add		$s3,	$zero,	$s0				
+				sll		$s3,	$s3,	5				
+				or		$s3,	$s3,	$t2				
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3		
+
+				andi	$t6,	$s0,	3
+				addi	$s7,	$s7,	1		
+				j		logic
+
+			down_left_up_right:
+				addi	$t2,	$t2,	5				
+				add		$s3,	$zero,	$s0				
+				sll		$s3,	$s3,	5				
+				or		$s3,	$s3,	$t2				
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				
+				j		logic
+
+
+
+			down_left_down_right_judge:
+				add 	$t7,	$t6,	$t2
+				addi	$t8,	$zero,	2
+				beq		$t7,	$t8,	down_left_down_right_add
+				addi	$t8,	$zero,	10
+				beq		$t7,	$t8,	down_left_down_right_add				
+				addi	$t8,	$zero,	18
+				beq		$t7,	$t8,	down_left_down_right_add				
+				addi	$t8,	$zero,	26
+				beq		$t7,	$t8,	down_left_down_right_add
+				j 		down_left_down_right
+
+			down_left_down_right:
+				addi	$t2,	$t2,	1				
+				add		$s3,	$zero,	$s0				
+				sll		$s3,	$s3,	5				
+				or		$s3,	$s3,	$t2				
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3				
+				j		logic	
+
+			down_left_down_right_add:
+
+				addi	$t2,	$t2,	1				
+				add		$s3,	$zero,	$s0				
+				sll		$s3,	$s3,	5				
+				or		$s3,	$s3,	$t2				
+				add		$s0,	$zero,	$s3				
+				addi	$s1,	$zero,	3
+
+				
+				andi	$t6,	$s0,	3	
+				addi	$s7,	$s7,	1
+				j		logic	
+
+
+	OVER:	#游戏结束
+		addi	$s0,	$zero,	32669
+		addi	$s5,	$zero,	1
+		j		logic
+	
+		
+	

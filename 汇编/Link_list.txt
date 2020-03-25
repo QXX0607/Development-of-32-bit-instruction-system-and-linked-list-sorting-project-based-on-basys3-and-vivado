@@ -1,0 +1,509 @@
+.text                           #代码段
+main:                           #主程序
+      add	$s0,	$zero,	$zero     	# $s0 就是 int i
+      addi	$s4,	$zero,	4369		#数码管预显示1111
+#预置十个数
+write:
+	addi	$t0,	$zero,	0
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	291		
+	sw	$a0	0($t1)		   	
+	
+	addi	$t0,	$zero,	4
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	42240		
+	sw	$a0	0($t1)		   	
+	
+	addi	$t0,	$zero,	8
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	43981		
+	sw	$a0	0($t1)		   	
+	
+	addi	$t0,	$zero,	12
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	239		
+	sw	$a0	0($t1)		   	
+	
+	addi	$t0,	$zero,	16
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	1		
+	sw	$a0	0($t1)		   	
+	
+	addi	$t0,	$zero,	20
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	52719		
+	sw	$a0	0($t1)		   	
+	
+	addi	$t0,	$zero,	24
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	5		
+	sw	$a0	0($t1)		   	
+	
+	addi	$t0,	$zero,	28
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	35		
+	sw	$a0	0($t1)		   	
+	
+	addi	$t0,	$zero,	32
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	2814		
+	sw	$a0	0($t1)		   	
+	
+	addi	$t0,	$t0,	36
+	addi	$s1,	$zero,	268697600	
+	add	$t1,	$t0,	$s1         	
+	addi	$a0,	$zero,	4660		
+	sw	$a0	0($t1)		   	
+
+#按键在Verilog里是$s6寄存器
+logic:	
+	addi	$gp,	$zero,	1	#中键，done
+	beq	$gp,	$s6,	sort
+	add	$zero,	$zero,	$zero
+	addi	$gp,	$zero,	8	#右键，显示数字，十六进制
+	beq	$gp,	$s6,	print1
+	add	$zero,	$zero,	$zero
+	addi	$gp,	$zero,	16	#左键，回显
+	beq	$gp,	$s6,	reprint1
+	add	$zero,	$zero,	$zero
+	j	logic
+sort:
+	add	$s0,	$zero,	$zero     	# $s0 就是 int i = 0
+	j	oLop
+oLop:
+                                		#外层循环开始
+      addi	$s2,	$zero,	9       	#$s2 就是 int j = 9
+      j		iLop
+iLop:
+                                    		#内层循环开始      
+	sll	$t0,	$s2,	2           	#偏移量j*4
+	add	$t1,	$s1,	$t0         	#A[j]的实际内存地址
+	addi	$t2,	$t1,	-4         	#A[j-1]的实际内存地址
+	lw	$t3,	0($t1)            	#$t3=A[j]的值
+	lw	$t4,	0($t2)            	#$t4=A[j-1]的值
+
+	slt	$t5,	$t4,	$t3         	#若A[j-1] < A[j]
+	beq	$t5,	$zero,	afterSwap 	#为真交换，否则跳过
+
+#swap
+	lw	$t6,	0($t1)            	# tmp=A[j]
+	sw	$t4,	0($t1)            	# A[j] = A[j-1]
+	sw	$t6,	0($t2)            	# A[j-1]=tmp
+afterSwap:
+	addi	$s2,	$s2,	-1          	# j = j - 1
+	
+	slt	$t0, 	$s0,	$s2         	#若i < j
+	bne	$t0,	$zero,	iLop      	#继续内层循环
+	
+	addi	$s0,	$s0,	1          	# i = i + 1
+	slti	$t0,	$s0,	9          	#若i<9
+	bne 	$t0,	$zero, oLop     	#则继续外层循环     
+                             			#外层循环结束
+       	addi	$s5,	$zero,	65535		#显示done
+#延时
+
+DELAY_20MS1:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus1:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	print2
+	j	minus1 
+	
+DELAY_20MS2:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus2:	addi    $t9,    $t9,    -1
+
+	beq	$t9,	$zero,	print3
+	j	minus2
+DELAY_20MS3:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus3:
+	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,print4
+	j	minus3 
+	
+DELAY_20MS4:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1       
+	sll     $t9,    $t9,    21
+minus4:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	print5
+	j	minus4
+	
+DELAY_20MS5:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus5:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	print6
+	j	minus5
+DELAY_20MS6:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus6:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,print7
+	j	minus6
+	
+DELAY_20MS7:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus7:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	print8
+	j	minus7 
+	
+DELAY_20MS8:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1         
+	sll     $t9,    $t9,    21
+minus8:
+	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	print9
+	j	minus8
+	
+DELAY_20MS9:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1       
+	sll     $t9,    $t9,    21
+minus9:	
+	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,print10
+	j	minus9  	
+DELAY_20MS10:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1         
+	sll     $t9,    $t9,    21
+minus10:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,print11
+	j	minus10  	
+		
+
+DELAY_20MS11:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1      
+	sll     $t9,    $t9,    21
+minus11:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	reprint2
+	j	minus11 
+	
+DELAY_20MS22:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1         
+	sll     $t9,    $t9,    21
+minus22:	
+	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	reprint3
+	j	minus22
+DELAY_20MS33:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus33:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,reprint4
+	j	minus33 
+	
+DELAY_20MS44:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus44:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	reprint5
+	j	minus44
+	
+DELAY_20MS55:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1         
+	sll     $t9,    $t9,    21
+minus55:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	reprint6
+	j	minus55
+DELAY_20MS66:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1       
+	sll     $t9,    $t9,    21
+minus66:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,reprint7
+	j	minus66
+	
+DELAY_20MS77:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus77:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	reprint8
+	j	minus77 
+	
+DELAY_20MS88:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1         
+	sll     $t9,    $t9,    21
+minus88:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,	reprint9
+	j	minus88
+	
+DELAY_20MS99:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1        
+	sll     $t9,    $t9,    21
+minus99:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,reprint10
+	j	minus99  	
+		
+DELAY_20MS1010:
+	addi    $t9,    $t9,    0
+	addi    $t9,    $t9,    1       
+	sll     $t9,    $t9,    21
+minus1010:	addi    $t9,    $t9,    -1
+	beq	$t9,	$zero,reprint11
+	j	minus1010  
+				
+							
+print1:
+	addi	$t0,	$zero,	0
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1        
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS1
+	
+print2:
+	addi	$t0,	$zero,	4
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS2
+print3:
+	addi	$t0,	$zero,	8
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1        
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS3
+print4:
+	addi	$t0,	$zero,	12
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS4
+print5:
+	addi	$t0,	$zero,	16
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS5
+	
+print6:
+	addi	$t0,	$zero,	20
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1       
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS6
+
+print7:
+	addi	$t0,	$zero,	24
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS7
+print8:
+	addi	$t0,	$zero,	28
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1        
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS8
+	
+print9:
+	addi	$t0,	$zero,	32
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS9
+print10:
+	addi	$t0,	$zero,	36
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1        
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS10
+print11:
+	addi	$s4,	$zero,	0
+	j	logic
+reprint1:
+	addi	$t0,	$zero,	36
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS11
+
+reprint2:
+	addi	$t0,	$zero,	32
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1        
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS22
+	
+reprint3:
+	addi	$t0,	$zero,	28
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1        
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS33
+reprint4:
+	addi	$t0,	$zero,	24
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS44
+reprint5:
+	addi	$t0,	$zero,	20
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1        
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS55
+	
+reprint6:
+	addi	$t0,	$zero,	16
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS66
+
+reprint7:
+	addi	$t0,	$zero,	12
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS77
+reprint8:
+	addi	$t0,	$zero,	8
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1         
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS88
+	
+reprint9:
+	addi	$t0,	$zero,	4
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1        
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS99
+reprint10:
+	addi	$t0,	$zero,	0
+	addi	$s1,	$zero,	268697600	
+	add	$t1, 	$t0,	$s1       
+	lw	$a0, 	0($t1)      	
+	add	$s4,	$zero,	$a0
+	j	DELAY_20MS1010
+
+reprint11:
+	add	$s4,	$zero,	$zero
+	j	logic
+#将拿到的值加入到结点中，十次
+i:
+	addi	$s0,$zero,-1
+	j	insert
+insert:	
+	addi	$t1,	$zero,268697640
+	addi 	$s0, 	$s0, 1          	#i = i + 1
+   	slti 	$t3, 	$s0, 3       		#若i<10
+    	bne  	$t3, 	$zero,  addnode    	#则继续循环
+	j	addnode	
+#增加按键
+addnode:
+	li	$a0, 32				#申请空间
+	sw	$zero, ($t1)			# initialized previous to zero
+	sw	$zero, 24($t1)			# initialized next to zero
+	
+	li	$v0, 8				#存数
+	la	$a0, 8($t1)
+	li	$a1, 10
+	syscall	
+	la	$a0,($t1)
+	beqz	$s7, declareFirstNode		#判断头节点是否为空
+	
+	lw	$t2, 24($a3)			# 检查当前节点是否有下一节点
+	beqz	$t2, noNextNode
+	
+	move	$t0, $t2			#没有下一结点
+	la	$t2, 24($t1)	
+	la	$t0, -8($t0)	
+	sw	$t2, ($t0)	
+	
+noNextNode:
+	lw	$t2, 16($a3)			#当前节点下一指针域的地址
+	sw	$t2, 24($t1)		
+	la	$t0, 8($t1)			#当前节点的数值
+	sw	$t0, 16($a3)			
+	
+	la	$t2, ($a3)	
+	sw	$t2, ($t1)	
+	
+	la	$a3, 8($t1) 
+	
+	j	consolePrint	
+
+	
+alloSpace:
+	
+	li	$a0, 32
+	jr	$ra      
+	
+
+declareFirstNode:
+	la	$s7, 8($t1)	
+	la	$a3, 8($t1)	
+	j	consolePrint
+next:
+	lw	$t5, 16($a3)	
+	bnez	$t5, nextNode		
+#下一结点，显示
+nextNode:
+	la	$t5, 16($a3)
+	lw	$a3, ($t5)
+	
+previous:
+	j	goBack	
+#s上一节点
+goBack:
+	la	$t5, -8($a3)
+	lw	$a3, ($t5)
+	jr	$ra
+debug:
+	j	printEverything
+printEverything:
+	la	$t1, ($s7)
+consolePrint:
+	li	$v0, 4
+	syscall
+	jr	$ra

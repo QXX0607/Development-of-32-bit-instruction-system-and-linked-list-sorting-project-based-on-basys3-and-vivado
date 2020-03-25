@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Mon Jul 15 18:46:55 2019
+# Process ID: 27340
+# Current directory: E:/Xilinx/Link_list/TCS_success/TCS_Success.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: E:/Xilinx/Link_list/TCS_success/TCS_Success.runs/synth_1/top.vds
+# Journal file: E:/Xilinx/Link_list/TCS_success/TCS_Success.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace

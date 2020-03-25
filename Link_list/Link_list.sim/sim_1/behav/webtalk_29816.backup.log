@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Jul 12 20:57:36 2019
+# Process ID: 29816
+# Current directory: E:/Xilinx/Link_list/TCS_success/TCS_Success.sim/sim_1/behav
+# Command line: wbtcv.exe -mode batch -source E:/Xilinx/Link_list/TCS_success/TCS_Success.sim/sim_1/behav/xsim.dir/top_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/Xilinx/Link_list/TCS_success/TCS_Success.sim/sim_1/behav/webtalk.log
+# Journal file: E:/Xilinx/Link_list/TCS_success/TCS_Success.sim/sim_1/behav\webtalk.jou
+#-----------------------------------------------------------
+source E:/Xilinx/Link_list/TCS_success/TCS_Success.sim/sim_1/behav/xsim.dir/top_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jul 12 20:57:39 2019...
